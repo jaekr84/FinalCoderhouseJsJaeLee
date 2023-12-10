@@ -44,6 +44,7 @@ document.getElementById('enviarRespuesta').style.display = 'none';
 document.getElementById('reiniciarJuego').style.display = 'none';
 document.getElementById('mensaje').style.display = 'none';
 document.getElementById('tituloJuegos').style.display = 'none'
+
 // Validacion de datos
 function validarDatos() {
     // Validar que el nombre y apellido solo contengan letras
@@ -198,7 +199,7 @@ function generarProblema() {
 // Función para terminar el juego
 function finJuego() {
 //SweetAlert finalizacion del juego    
-    Swal.fire("Felicitaciones terminaste el nivel!");
+    Swal.fire("Termino el juego, te animas a superar tu record?");
 // Detiene el cronómetro
     clearInterval(cronometro);
 // Registra el tiempo final
@@ -218,29 +219,6 @@ function finJuego() {
     localStorage.setItem('ranking', JSON.stringify(ranking));
 // Muestra el ranking
     mostrarRanking();
-}
-
-// Función para mostrar el ranking
-function mostrarRanking() {
-    // Oculta el juego y muestra el ranking
-    document.getElementById('juego').style.display = 'none';
-    document.getElementById('ranking').style.display = 'block';
-    document.getElementById('tecladoNumerico').style.display = 'none';
-    document.getElementById('reiniciarJuego').style.display = 'block'
-    document.getElementById('top10').style.display = 'block';
-    document.getElementById('borrar').style.display = 'none';
-    document.getElementById('enviarRespuesta').style.display = 'none';
-
-// Obtiene la lista de jugadores
-    let listaJugadores = document.getElementById('listaJugadores');
-// Limpia la lista
-    listaJugadores.innerHTML = '';
-// Añade cada jugador al ranking
-    for (let jugador of ranking) {
-        let li = document.createElement('li');
-        li.textContent = `${jugador.nombre} ${jugador.apellido} ${jugador.colegio}: ${jugador.puntos} puntos`;
-        listaJugadores.appendChild(li);
-    }
 }
 
 function mostrarRanking() {
