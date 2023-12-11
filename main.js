@@ -255,6 +255,7 @@ function mostrarRanking() {
     document.getElementById('borrar').style.display = 'none';
     document.getElementById('enviarRespuesta').style.display = 'none';
     document.getElementById('verRanking').style.display = 'none'
+    document.getElementById('volverInicio').style.display = 'block'
 
     // Obtiene el contenedor de la tabla
     let tablaJugadores = document.getElementById('listaJugadores');
