@@ -113,7 +113,15 @@ document.getElementById('tituloJuegos').style.display = 'block'
         let tiempo = Math.round((Date.now() - inicio) / 1000);
         document.getElementById('cronometro').textContent = 60 - tiempo;
         if (tiempo >= 60) {
-            finJuego(); // Si el tiempo supera los 60 segundos, termina el juego
+            finJuego();
+            Swal.fire({
+            position: "center",
+            icon: "warning",
+            title: "La edad solo puede contener números",                
+            showConfirmButton: false,
+            timer: 1500
+            });
+ // Si el tiempo supera los 60 segundos, termina el juego
         }
     }, 1000);
     generarProblema(); // Genera el primer problema
@@ -161,8 +169,24 @@ document.getElementById('enviarRespuesta').addEventListener('click', function() 
             timer: 1500
         });       
     }
-    if (errores === 3 || problemas === 10) { // Si el usuario ha cometido 3 errores o ha resuelto 10 problemas...
+    if (errores === 3) { // Si el usuario ha cometido 3 errores o ha resuelto 10 problemas...
+        Swal.fire({
+            position: "center",
+            icon: "warning",
+            title: "OH! NO TE QUEDASTE SIN VIDAS",
+            showConfirmButton: false,
+            timer: 1500
+        });       
         finJuego(); // ... termina el juego
+    } else if (problemas === 10) {
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "MUY BIEN! RESOLVISTE TODOS LOS PROBLEMAS!",
+            showConfirmButton: false,
+            timer: 1500
+        });       
+        finJuego();
     } else { // Si no...
         generarProblema(); // ... genera un nuevo problema
     }
@@ -171,8 +195,8 @@ document.getElementById('enviarRespuesta').addEventListener('click', function() 
 // Función para generar un problema de matemáticas
 function generarProblema() {
 // Genera dos números aleatorios entre 10 y 99
-    let num1 = Math.floor(Math.random() * 90) + 10;
-    let num2 = Math.floor(Math.random() * 90) + 10;
+    let num1 = Math.floor(Math.random() * 9) + 10;
+    let num2 = Math.floor(Math.random() * 9) + 10;
 // Decide aleatoriamente si la operación será una suma o una resta
     let operacion = Math.random() < 0.5 ? '+' : '-';
 // Si es una resta y el segundo número es mayor que el primero, los intercambia
@@ -198,8 +222,6 @@ function generarProblema() {
 
 // Función para terminar el juego
 function finJuego() {
-//SweetAlert finalizacion del juego    
-    Swal.fire("Termino el juego, te animas a superar tu record?");
 // Detiene el cronómetro
     clearInterval(cronometro);
 // Registra el tiempo final

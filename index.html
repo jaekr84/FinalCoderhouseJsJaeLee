@@ -17,8 +17,8 @@
             <input class="campoForm" type="text" id="apellido" placeholder="Ingresa tu Apellido" required>
             <input class="campoForm" type="number" id="edad" placeholder="Ingresa tu edad" required>
             <input class="campoForm" type="text" id="colegio" placeholder="Ingresa el nombre de tu Colegio" required >
-            <select required class="campoForm form-select country pais" aria-label="Default select example" onchange="loadStates()">
-                <option id="pais">Selecciona tu pais</option>
+            <select class="campoForm form-select country pais" aria-label="Default select example" onchange="loadStates()">
+                <option id="pais" selected>Selecciona tu pais</option>
             </select>    
             <a><button id="iniciarJuego" type="submit">Iniciar Juego</button></a>
             
@@ -78,7 +78,7 @@
         <div id="listaJugadores"></div>
     </div>
 
-    <button id="reiniciarJuego">Jugar de nuevo</button>
+    <button id="reiniciarJuego">Reiniciar Juego</button>
         
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
     <script src="main.js"></script>

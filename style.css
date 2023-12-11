@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 /* FUENTES */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 /* FORMULARIO DE INICIO */
@@ -175,6 +180,29 @@ button:active {
     font-weight: bold;
 }
 
+.ranking{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 200px;
+    background-color: rgb(0, 229, 255);
+    border-radius: 15px;
+    margin-left: 43%;
+    margin-right: 50%;
+}
+.inicio{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 200px;
+    background-color: rgb(0, 229, 255);
+    border-radius: 15px;
+    margin-left: 43%;
+    margin-right: 50%;
+}
 /* --------- JUEGO --------- */
 
 
