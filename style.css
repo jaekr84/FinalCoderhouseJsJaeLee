@@ -42,6 +42,18 @@
     background-color: orange;
 }
 
+.divRanking{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#verRanking{
+    background-color: orange;
+    width: 300px;
+    height: 35px;
+}
+
 button {
     --border-radius: 25px;
     --border-width: 3px;
@@ -327,8 +339,12 @@ button:active {
     width: 22%;
     margin-left: auto;
     margin-right: auto;
+}
 
-
+#volverInicio{
+    background-color: orange;
+    width: 200px;
+    height: 40px;
 }
 
 th{
@@ -342,12 +358,10 @@ tr{
     background-color: orange;
 }
 
+
+
 #reiniciarJuego{
-    display: flex;
-    justify-content: center;
-    left: 43%;
-    padding: 10px;
     width: 200px;
     background-color: orange;
-    margin-top: 10px;
+    height: 40px;
 }

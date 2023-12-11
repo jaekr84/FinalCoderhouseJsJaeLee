@@ -44,6 +44,7 @@ document.getElementById('enviarRespuesta').style.display = 'none';
 document.getElementById('reiniciarJuego').style.display = 'none';
 document.getElementById('mensaje').style.display = 'none';
 document.getElementById('tituloJuegos').style.display = 'none'
+document.getElementById('volverInicio').style.display = 'none'
 
 // Validacion de datos
 function validarDatos() {
@@ -106,6 +107,7 @@ document.getElementById('borrar').style.display = 'block';
 document.getElementById('enviarRespuesta').style.display = 'block';
 document.getElementById('mensaje').style.display = 'block';
 document.getElementById('tituloJuegos').style.display = 'block'
+document.getElementById('verRanking').style.display = 'none'
 
 // Inicia el cronómetro
     inicio = Date.now();
@@ -252,6 +254,7 @@ function mostrarRanking() {
     document.getElementById('top10').style.display = 'block';
     document.getElementById('borrar').style.display = 'none';
     document.getElementById('enviarRespuesta').style.display = 'none';
+    document.getElementById('verRanking').style.display = 'none'
 
     // Obtiene el contenedor de la tabla
     let tablaJugadores = document.getElementById('listaJugadores');
@@ -325,3 +328,60 @@ document.getElementById('reiniciarJuego').addEventListener('click', function() {
 
     generarProblema();
 });
+
+
+function mostrarRanking1() {
+    // Oculta el juego y muestra el ranking
+    document.getElementById('juego').style.display = 'none';
+    document.getElementById('ranking').style.display = 'block';
+    document.getElementById('tecladoNumerico').style.display = 'none';
+    document.getElementById('reiniciarJuego').style.display = 'none'
+    document.getElementById('top10').style.display = 'block';
+    document.getElementById('borrar').style.display = 'none';
+    document.getElementById('enviarRespuesta').style.display = 'none';
+    document.getElementById('userForm').style.display = 'none'
+    document.getElementById('verRanking').style.display = 'none'
+    document.getElementById('volverInicio').style.display = 'block'
+
+
+    // Obtiene el contenedor de la tabla
+    let tablaJugadores = document.getElementById('listaJugadores');
+    // Limpia la tabla
+    tablaJugadores.innerHTML = '';
+    // Crea el encabezado de la tabla
+    let thead = document.createElement('thead');
+    let tr = document.createElement('tr');
+    let th1 = document.createElement('th');
+    th1.textContent = 'Nombre';
+    let th2 = document.createElement('th');
+    th2.textContent = 'Apellido';
+    let th3 = document.createElement('th');
+    th3.textContent = 'Colegio';
+    let th4 = document.createElement('th');
+    th4.textContent = 'Puntos';
+    tr.appendChild(th1);
+    tr.appendChild(th2);
+    tr.appendChild(th3);
+    tr.appendChild(th4);
+    thead.appendChild(tr);
+    tablaJugadores.appendChild(thead);
+    // Crea el cuerpo de la tabla
+    let tbody = document.createElement('tbody');
+    for (let jugador of ranking) {
+        let tr = document.createElement('tr');
+        let td1 = document.createElement('td');
+        td1.textContent = jugador.nombre;
+        let td2 = document.createElement('td');
+        td2.textContent = jugador.apellido;
+        let td3 = document.createElement('td');
+        td3.textContent = jugador.colegio;
+        let td4 = document.createElement('td');
+        td4.textContent = jugador.puntos;
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tbody.appendChild(tr);
+    }
+    tablaJugadores.appendChild(tbody);
+}

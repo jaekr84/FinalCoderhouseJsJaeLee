@@ -20,10 +20,13 @@
             <select class="campoForm form-select country pais" aria-label="Default select example" onchange="loadStates()">
                 <option id="pais" selected>Selecciona tu pais</option>
             </select>    
-            <a><button id="iniciarJuego" type="submit">Iniciar Juego</button></a>
-            
+            <a><button id="iniciarJuego" type="submit">Iniciar Juego</button></a>            
         </form>
     </div>
+    <div class="divRanking">
+        <button id="verRanking" class="verRanking" onclick="mostrarRanking1()">Ver Ranking</button>
+    </div>
+
 <!--JUEGO-->   
     <div id="juego">
         <div id="tituloJuegos">
@@ -77,8 +80,10 @@
         <h3 id="top10">Top 10</h3>
         <div id="listaJugadores"></div>
     </div>
-
-    <button id="reiniciarJuego">Reiniciar Juego</button>
+    <div id="botonesRanking" class="flex justify-center m-5 g-5">
+        <button id="reiniciarJuego">Reiniciar Juego</button>
+        <a href="./index.html"><button id="volverInicio">Volver a Inicio</button>  </a>  
+    </div>
         
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
     <script src="main.js"></script>
